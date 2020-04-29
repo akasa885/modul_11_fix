@@ -22,6 +22,7 @@ class ListViewModel: ViewModel() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<List<Photo>>() {
                     override fun onSuccess(value: List<Photo>?) {
+                        //memasukkan data menjadi live data
                         photos.value = value
                     }
 
