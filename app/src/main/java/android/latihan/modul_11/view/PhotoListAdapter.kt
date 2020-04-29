@@ -31,8 +31,9 @@ class PhotoListAdapter(var photos: ArrayList<Photo>) : RecyclerView.Adapter<Phot
         fun bind(photos: Photo){
             itemView.tvTitle.text = photos.title
             itemView.urlText.text = photos.thumbnail
+            itemView.txtId.text = photos.id.toString()
             itemView.setOnClickListener{ view ->
-                Toast.makeText(itemView.context,"Hello",Toast.LENGTH_LONG).show()
+                Toast.makeText(itemView.context,"Hello, ID no ${photos.id}",Toast.LENGTH_LONG).show()
             }
             Picasso.get().load(photos.thumbnail).into(itemView.imageView)
         }
